@@ -190,7 +190,6 @@ public:
 
 	void SortAsc() {
 		if (count == 0 || count == 1) return;
-
 		vector<int> ar;
 		Node* current = head;
 		for (int i = 0; i < count; i++) {
@@ -363,12 +362,32 @@ int main()
 	SinglyLinkedList sll;
 	SinglyLinkedList sll2;
 	int* ar;
-
+	sll.AddToTail(10);
+	sll.AddToTail(20);
+	sll.AddToTail(30);
+	sll.AddToTail(40);
+	sll.AddToTail(50);
 	sll.AddToTail(40);
 	cout << sll;
+	sll.Print();
 
 	sll2.AddToTail(10);
 	sll == sll2;
 	sll != sll2;
 
+	sll2.AddToTail(20);
+	sll2.AddToTail(30);
+	sll2.AddToTail(40);
+	sll2.AddToTail(50);
+	sll2.AddToTail(40);
+
+	sll2.Clone(sll);
+	sll.MergeWith(sll2);
+	sll.Print();
+	sll.SetAt(2, 5);
+	ar = sll.ToArray();
+
+	cout << sll.LastIndexOf(40) << "\n";
+	sll.Shuffle();
+	sll.Print();
 }
